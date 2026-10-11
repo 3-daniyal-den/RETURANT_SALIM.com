@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kitchen Admin Portal | Sweet Salim</title>
+  <meta name="description" content="Sweet Salim kitchen operations, live orders management, and product catalog controls." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- ADMIN AUTHENTICATION SCREEN -->
+  <div class="admin-auth-wrapper" id="adminAuthWrapper">
+    <div class="admin-auth-card">
+      <img src="assets/logo/logo.svg" alt="Sweet Salim" class="admin-auth-logo" />
+      <h2>Kitchen &amp; Operations Portal</h2>
+      <p>Authorized Sweet Salim restaurant staff only</p>
+
+      <form id="adminLoginForm">
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="adminEmail">Staff Email</label>
+          <input type="email" id="adminEmail" class="form-input" placeholder="admin@sweetsalim.com" value="admin@sweetsalim.com" required />
+        </div>
+
+        <div class="form-group" style="text-align: left;">
+          <label class="form-label" for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" class="form-input" placeholder="••••••••" value="salim1984" required />
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">
+          Access Operations Dashboard
+        </button>
+
+        <div id="adminLoginFeedback" style="margin-top: 14px;"></div>
+
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px dashed #E5E7EB; font-size: 0.8125rem; color: #6B7280; text-align: left;">
+          <strong style="color: var(--burgundy-900);">Demo Preview Credentials:</strong><br />
+          Email: <code>admin@sweetsalim.com</code><br />
+          Password: <code>salim1984</code><br />
+          <span style="font-size: 0.75rem; color: #888; display: block; margin-top: 4px;">
+            (Or configure Supabase Auth in <code>js/config.js</code>)
+          </span>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <a href="index.html" style="font-size: 0.875rem; color: var(--burgundy-800); text-decoration: underline;">
+            &larr; Return to Customer Storefront
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMIN DASHBOARD (Protected View) -->
+  <div id="adminDashboardWrapper" style="display: none;">
+    <!-- Top Admin Bar -->
+    <header class="admin-header">
+      <div class="admin-header-brand">
+        <img src="assets/logo/logo-mark.svg" alt="Sweet Salim Mark" />
+        <h1>Sweet Salim Operations</h1>
+        <span>Live Kitchen</span>
+      </div>
+
+      <div class="admin-user-info">
+        <span class="admin-user-tag" id="adminUserEmail">admin@sweetsalim.com</span>
+        <a href="index.html" class="btn btn-outline-gold btn-sm" target="_blank" title="Preview Customer Site">
+          View Storefront
+        </a>
+        <button id="adminLogoutBtn" class="btn btn-sm" style="background: rgba(255,255,255,0.15); color: #FFF; border: none;">
+          Sign Out
+        </button>
+      </div>
+    </header>
+
+    <div class="admin-dashboard-container">
+      
+      <!-- Metrics Cards -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon-box metric-icon-revenue">💰</div>
+          <div class="metric-data">
+            <h4>Total Revenue</h4>
+            <div class="metric-value" id="metricRevenue">Rs. 0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-box metric-icon-orders">🧾</div>
+          <div class="metric-data">
+            <h4>Total Orders</h4>
+            <div class="metric-value" id="metricTotalOrders">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-box metric-icon-kitchen">🍳</div>
+          <div class="metric-data">
+            <h4>In Kitchen</h4>
+            <div class="metric-value" id="metricInKitchen">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon-box metric-icon-delivery">🛵</div>
+          <div class="metric-data">
+            <h4>In Transit</h4>
+            <div class="metric-value" id="metricInTransit">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="orders">
+          <span>📦</span> Live Orders Management
+        </button>
+        <button class="admin-tab-btn" data-tab="products">
+          <span>🍰</span> Product Catalog &amp; Inventory
+        </button>
+      </div>
+
+      <!-- Panel 1: Orders Management -->
+      <div id="ordersPanel" class="admin-panel-card">
+        <div class="admin-table-controls">
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <input type="text" id="adminOrderSearch" class="form-input" placeholder="Search tracking #, name, phone..." style="width: 280px; padding: 8px 14px; font-size: 0.875rem;" />
+            
+            <select id="adminStatusFilter" class="form-select" style="padding: 8px 14px; font-size: 0.875rem;">
+              <option value="all">All Statuses</option>
+              <option value="received">Order Received</option>
+              <option value="preparing">In Kitchen (Preparing)</option>
+              <option value="ready_for_dispatch">Ready for Dispatch</option>
+              <option value="on_the_way">On The Way</option>
+              <option value="delivered">Delivered</option>
+              <option value="cancelled">Cancelled</option>
+            </select>
+          </div>
+
+          <div style="font-size: 0.8125rem; color: #6B7280;">
+            Status updates automatically trigger customer email notifications.
+          </div>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Order / Date</th>
+                <th>Customer Details</th>
+                <th>Dishes Ordered</th>
+                <th>Total (PKR)</th>
+                <th>Current Status</th>
+                <th>Update Status</th>
+              </tr>
+            </thead>
+            <tbody id="adminOrdersTableBody">
+              <tr>
+                <td colspan="6" style="text-align: center; padding: 30px; color: #888;">
+                  Loading active orders...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Panel 2: Products & Inventory Management -->
+      <div id="productsPanel" class="admin-panel-card" style="display: none;">
+        <div class="admin-table-controls">
+          <div>
+            <strong style="color: var(--burgundy-900);">Inventory &amp; Pricing Controls</strong>
+            <p style="font-size: 0.8125rem; color: #666; margin-top: 2px;">
+              Toggle items in/out of stock or update pricing instantly.
+            </p>
+          </div>
+        </div>
+
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price (PKR)</th>
+                <th>Stock Availability</th>
+                <th>Prep Time</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsTableBody">
+              <tr>
+                <td colspan="4" style="text-align: center; padding: 30px; color: #888;">
+                  Loading products catalog...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Supabase Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="js/config.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/admin.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

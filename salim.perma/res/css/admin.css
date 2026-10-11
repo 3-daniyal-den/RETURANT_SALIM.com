@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concierge &amp; Contact | Sweet Salim Restaurant</title>
+  <meta name="description" content="Contact Sweet Salim Restaurant & Confectionery in Lahore. Address, contact numbers, hours, FAQs, and online inquiry form." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .faq-accordion {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--cream-300);
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      background: none;
+      border: none;
+      font-weight: 600;
+      color: var(--burgundy-900);
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.875rem;
+      color: var(--charcoal-700);
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-question {
+      color: var(--gold-600);
+    }
+  </style>
+</head>
+<body>
+
+  

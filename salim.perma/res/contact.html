@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concierge &amp; Contact | Sweet Salim Restaurant</title>
+  <meta name="description" content="Contact Sweet Salim Restaurant & Confectionery in Lahore. Address, contact numbers, hours, FAQs, and online inquiry form." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <style>
+    .faq-accordion {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #FFFFFF;
+      border: 1px solid var(--cream-300);
+      border-radius: var(--border-radius-sm);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 16px 20px;
+      background: none;
+      border: none;
+      font-weight: 600;
+      color: var(--burgundy-900);
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faq-answer {
+      display: none;
+      padding: 0 20px 18px;
+      font-size: 0.875rem;
+      color: var(--charcoal-700);
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-question {
+      color: var(--gold-600);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <div class="container">
+      <div>✨ Need assistance with a wedding hamper or party order? Call our concierge directly!</div>
+      <div class="top-announcement-links">
+        <a href="track-order.html">Track Order</a>
+        <span>|</span>
+        <a href="tel:+923001234567">+92 300 1234567</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo-link">
+        <img class="brand-logo-svg" src="assets/logo/logo.svg" alt="Sweet Salim Logo" />
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="mainNavMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Royal Menu</a></li>
+          <li><a href="about.html" class="nav-link">Our Heritage</a></li>
+          <li><a href="contact.html" class="nav-link active">Concierge &amp; Contact</a></li>
+          <li><a href="track-order.html" class="nav-link">Track Order</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="header-btn cart-btn cart-trigger-btn" id="openCartBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Header Banner -->
+    <section class="section section-bg-burgundy" style="padding: 60px 0 40px; text-align: center;">
+      <div class="container">
+        <span class="section-tag" style="color: var(--gold-300);">Hospitality &amp; Inquiries</span>
+        <h1 class="section-title" style="color: var(--cream-50); font-size: 3rem;">
+          Royal Concierge &amp; Contact
+        </h1>
+        <div class="gold-divider">
+          <span class="gold-divider-icon">♦</span>
+        </div>
+        <p class="section-subtitle" style="color: var(--cream-200); max-width: 650px; margin: 0 auto;">
+          Whether arranging celebratory gift boxes, reserving private tables, or inquiring about our menu, we are at your service.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Details & Form Grid -->
+    <section class="section section-bg-cream">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px;" class="checkout-grid">
+          
+          <!-- Contact Info Cards -->
+          <div>
+            <div style="background: #FFFFFF; border-radius: var(--border-radius-md); border: 1px solid var(--cream-300); padding: 32px; box-shadow: var(--shadow-sm); margin-bottom: 24px;">
+              <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--burgundy-900); margin-bottom: 20px;">
+                Restaurant &amp; Main Branch
+              </h3>
+
+              <div class="footer-contact-item" style="color: var(--charcoal-800); margin-bottom: 18px;">
+                <span class="footer-contact-icon" style="font-size: 1.2rem;">📍</span>
+                <div>
+                  <strong>Address:</strong><br />
+                  14-Gulberg Main Boulevard, Lahore, Pakistan<br />
+                  <span style="font-size: 0.8125rem; color: #666;">(Near Main Market Roundabout)</span>
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--charcoal-800); margin-bottom: 18px;">
+                <span class="footer-contact-icon" style="font-size: 1.2rem;">📞</span>
+                <div>
+                  <strong>Direct Lines:</strong><br />
+                  +92 300 1234567<br />
+                  (042) 35789000
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--charcoal-800); margin-bottom: 18px;">
+                <span class="footer-contact-icon" style="font-size: 1.2rem;">✉️</span>
+                <div>
+                  <strong>Email Concierge:</strong><br />
+                  sweetsalim99@gmail.com
+                </div>
+              </div>
+
+              <div class="footer-contact-item" style="color: var(--charcoal-800); margin-bottom: 24px;">
+                <span class="footer-contact-icon" style="font-size: 1.2rem;">🕒</span>
+                <div>
+                  <strong>Kitchen &amp; Delivery Hours:</strong><br />
+                  Monday - Sunday: 10:00 AM – 11:30 PM
+                </div>
+              </div>
+
+              <a id="whatsAppInquiryBtn" href="https://wa.me/923001234567" target="_blank" class="btn btn-primary btn-block">
+                <span>💬</span> Chat Directly on WhatsApp
+              </a>
+            </div>
+
+            <!-- Notice on Placeholders -->
+            <div style="background: var(--gold-50); border: 1px dashed var(--gold-500); border-radius: var(--border-radius-sm); padding: 16px; font-size: 0.8125rem; color: var(--charcoal-700);">
+              <strong>*Note on Information:</strong> Addresses and phone numbers shown above are editable placeholders for your operational deployment.
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div style="background: #FFFFFF; border-radius: var(--border-radius-md); border: 1px solid var(--cream-300); padding: 36px; box-shadow: var(--shadow-sm);">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--burgundy-900); margin-bottom: 8px;">
+              Send a Message to Our Concierge
+            </h3>
+            <p style="font-size: 0.875rem; color: var(--charcoal-600); margin-bottom: 24px;">
+              For bulk wedding mithai boxes, private catering, or general feedback, fill the form below.
+            </p>
+
+            <form id="contactForm">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Your Name *</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Tariq Mehmood" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactEmailPhone">Email Address or Phone *</label>
+                <input type="text" id="contactEmailPhone" class="form-input" placeholder="e.g. 0300 1234567 or email@domain.com" required />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactSubject">Inquiry Topic</label>
+                <select id="contactSubject" class="form-select">
+                  <option value="catering">Wedding or Corporate Mithai Hampers</option>
+                  <option value="custom_cake">Custom Celebration Cake Order</option>
+                  <option value="order_query">Online Order Inquiry</option>
+                  <option value="feedback">General Feedback &amp; Suggestions</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactMessage">Your Message *</label>
+                <textarea id="contactMessage" class="form-textarea" rows="4" placeholder="Please describe your requirements, event date, or question..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-burgundy btn-lg btn-block">
+                Submit Inquiry to Concierge
+              </button>
+
+              <div id="contactFeedback"></div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Customer Feedback & Review Section -->
+        <div id="feedbackSection" style="margin-top: 60px; max-width: 860px; margin-left: auto; margin-right: auto; background: #FFFFFF; border-radius: var(--border-radius-md); border: 1px solid var(--cream-300); padding: 40px 32px; box-shadow: var(--shadow-sm);">
+          <div style="text-align: center; margin-bottom: 28px;">
+            <span class="section-tag">Patron Voices &amp; Quality</span>
+            <h2 style="font-family: var(--font-serif); font-size: 2rem; color: var(--burgundy-900); margin-bottom: 8px;">
+              Customer Feedback, Reviews &amp; Suggestions
+            </h2>
+            <div class="gold-divider">
+              <span class="gold-divider-icon">♦</span>
+            </div>
+            <p style="color: var(--charcoal-600); font-size: 0.9375rem; max-width: 600px; margin: 0 auto;">
+              Your dining feedback and reviews are delivered directly to sweetsalim99@gmail.com and our kitchen management team.
+            </p>
+          </div>
+
+          <form id="customerFeedbackForm">
+            <!-- 5-Star Rating Selector -->
+            <div class="form-group" style="text-align: center; margin-bottom: 24px;">
+              <label class="form-label" style="font-size: 1rem; margin-bottom: 8px; display: block;">Your Dining Rating *</label>
+              <div id="starRatingContainer" style="display: inline-flex; gap: 8px; font-size: 2rem; cursor: pointer; color: #D4AF37;">
+                <span class="star-rating-item" data-value="1" title="1 Star - Unsatisfactory">★</span>
+                <span class="star-rating-item" data-value="2" title="2 Stars - Needs Improvement">★</span>
+                <span class="star-rating-item" data-value="3" title="3 Stars - Satisfactory">★</span>
+                <span class="star-rating-item" data-value="4" title="4 Stars - Very Good">★</span>
+                <span class="star-rating-item" data-value="5" title="5 Stars - Royal Excellence">★</span>
+              </div>
+              <input type="hidden" id="feedbackRatingInput" value="5" />
+              <div id="starRatingLabel" style="font-size: 0.8125rem; color: var(--charcoal-500); margin-top: 4px;">5 Stars - Royal Excellence</div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="feedbackName">Your Name (Optional)</label>
+                <input type="text" id="feedbackName" class="form-input" placeholder="e.g. Asad Qureshi (or leave blank for Anonymous)" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="feedbackOrderNumber">Order Number (If applicable)</label>
+                <input type="text" id="feedbackOrderNumber" class="form-input" placeholder="e.g. SSL-2026-X7K9P" style="text-transform: uppercase;" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="feedbackCategory">Feedback Type</label>
+              <select id="feedbackCategory" class="form-select">
+                <option value="review">Food &amp; Dining Review (Compliment / Experience)</option>
+                <option value="suggestion">Suggestion for the Chef / New Delicacy Idea</option>
+                <option value="complaint">Service or Delivery Complaint</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="feedbackMessage">Your Feedback Message *</label>
+              <textarea id="feedbackMessage" class="form-textarea" rows="4" placeholder="Tell us about the flavor, portion, presentation, or delivery service..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="feedbackSuggestions">Specific Suggestions or Areas for Improvement (Optional)</label>
+              <textarea id="feedbackSuggestions" class="form-textarea" rows="2" placeholder="Any suggestions to elevate our traditional recipes or packaging?"></textarea>
+            </div>
+
+            <button type="submit" id="submitFeedbackBtn" class="btn btn-primary btn-lg btn-block" style="margin-top: 10px;">
+              Submit Feedback to Sweet Salim
+            </button>
+
+            <div id="feedbackResultAlert" style="margin-top: 16px;"></div>
+          </form>
+        </div>
+
+        <!-- Frequently Asked Questions -->
+        <div style="margin-top: 70px; max-width: 860px; margin-left: auto; margin-right: auto;">
+          <div class="section-header" style="margin-bottom: 30px;">
+            <span class="section-tag">Help &amp; Insights</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="gold-divider">
+              <span class="gold-divider-icon">♦</span>
+            </div>
+          </div>
+
+          <div class="faq-accordion">
+            <div class="faq-item active">
+              <button class="faq-question">
+                What is the typical delivery timeframe for orders?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Standard delivery across Lahore is completed within 35 to 45 minutes from when your order is confirmed. During peak evening hours or major festivals (such as Eid), we advise placing orders slightly in advance.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                How should traditional mithai and khoya confections be stored?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Because our sweets contain pure khoya and no chemical preservatives, we recommend consuming milk-based sweets (Gulab Jamun, Rasgulla, Malai Barfi) within 2-3 days refrigerated. Dry confections like Kaju Katli and Motichoor Ladoo stay fresh at cool room temperature for up to 7 days.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                Can I order custom packaging or luxury boxes for wedding events?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                Yes! We offer velvet-lined boxes with gold foil embossing, personalized family name tags, and silk ribbons for wedding invitations and festive celebrations. Contact our concierge at least 3-5 days in advance.
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question">
+                What payment methods are accepted?
+                <span>+</span>
+              </button>
+              <div class="faq-answer">
+                We accept Cash on Delivery (COD), instant bank transfer via Raast ID, and credit/debit card on delivery via the rider's portable wireless POS machine.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/logo.svg" alt="Sweet Salim" style="height: 48px; margin-bottom: 12px;" />
+          <p>Authentic royal confections and culinary feasts crafted with unyielding commitment to purity and heritage.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Royal Menu</a></li>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="contact.html">Concierge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Visit Us</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 8px;">14-Gulberg Main Boulevard, Lahore</p>
+          <p style="font-size: 0.875rem; margin-bottom: 8px;">Direct: +92 300 1234567</p>
+          <p style="font-size: 0.875rem;">Timings: 10:00 AM - 11:30 PM</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Online Orders</h4>
+          <p style="font-size: 0.875rem; color: var(--gold-300);">Orders above Rs. 2,500 qualify for free express delivery.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 1984 - 2026 Sweet Salim Confectionery &amp; Restaurant. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        Your Royal Cart
+      </h3>
+      <button class="cart-drawer-close" id="closeCartBtn" aria-label="Close Cart">&times;</button>
+    </div>
+    <div class="free-delivery-tracker" id="cartFreeDeliveryTracker"></div>
+    <div class="cart-items-list" id="cartDrawerItems"></div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter"></div>
+  </aside>
+
+  <!-- Supabase CDN Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="js/config.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

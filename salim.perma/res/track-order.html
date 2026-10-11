@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Order | Sweet Salim Restaurant &amp; Confectionery</title>
+  <meta name="description" content="Track your Sweet Salim feast in real-time. Follow live kitchen preparation, dispatch, and delivery updates." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-mark.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="top-announcement">
+    <div class="container">
+      <div>✨ Follow live kitchen dispatch updates for your Sweet Salim delicacies</div>
+      <div class="top-announcement-links">
+        <a href="menu.html">Royal Menu</a>
+        <span>|</span>
+        <a href="tel:+923001234567">+92 300 1234567</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo-link">
+        <img class="brand-logo-svg" src="assets/logo/logo.svg" alt="Sweet Salim Logo" />
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="mainNavMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Royal Menu</a></li>
+          <li><a href="about.html" class="nav-link">Our Heritage</a></li>
+          <li><a href="contact.html" class="nav-link">Concierge</a></li>
+          <li><a href="track-order.html" class="nav-link active">Track Order</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="header-btn cart-btn cart-trigger-btn" id="openCartBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </button>
+
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Header Banner -->
+    <section class="section section-bg-burgundy" style="padding: 60px 0 40px; text-align: center;">
+      <div class="container">
+        <span class="section-tag" style="color: var(--gold-300);">Real-Time Kitchen Progress</span>
+        <h1 class="section-title" style="color: var(--cream-50); font-size: 3rem;">
+          Track Your Feast Live
+        </h1>
+        <div class="gold-divider">
+          <span class="gold-divider-icon">♦</span>
+        </div>
+        <p class="section-subtitle" style="color: var(--cream-200); max-width: 650px; margin: 0 auto;">
+          Enter your unique tracking reference code and contact number to monitor your order status.
+        </p>
+      </div>
+    </section>
+
+    <!-- Tracking Lookup Section -->
+    <section class="section section-bg-cream">
+      <div class="container">
+        
+        <!-- Search Input Card -->
+        <div class="tracking-search-box">
+          <form id="trackingSearchForm">
+            <div class="form-group">
+              <label class="form-label" for="trackingCodeInput">Order Tracking Code *</label>
+              <input type="text" id="trackingCodeInput" class="form-input" placeholder="e.g. SSL-2026-X7K9P" style="text-transform: uppercase; font-weight: 700; letter-spacing: 1px;" required />
+              <span class="form-hint">Provided on your order confirmation screen and email receipt</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="trackingVerificationInput">Contact Phone or Email *</label>
+              <input type="text" id="trackingVerificationInput" class="form-input" placeholder="e.g. 0300 1234567 or customer@email.com" />
+              <span class="form-hint">Verification prevents unauthorized access to customer order details</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">
+              Track Order Status
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- Dynamic Results Container -->
+        <div id="trackingResultSection" style="max-width: 860px; margin: 0 auto;">
+          <!-- Empty State Placeholder -->
+          <div style="background: #FFFFFF; border-radius: var(--border-radius-md); border: 1px dashed var(--cream-300); padding: 50px 20px; text-align: center; color: var(--charcoal-500);">
+            <div style="font-size: 3rem; margin-bottom: 12px;">🛵</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--burgundy-900); margin-bottom: 8px;">
+              No Tracking Code Entered Yet
+            </h3>
+            <p style="font-size: 0.9375rem; max-width: 480px; margin: 0 auto;">
+              Enter your tracking code above to view the 5-step preparation timeline and rider status.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo/logo.svg" alt="Sweet Salim" style="height: 48px; margin-bottom: 12px;" />
+          <p>Authentic royal confections and culinary feasts crafted with unyielding commitment to purity and heritage.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Royal Menu</a></li>
+            <li><a href="about.html">Our Heritage</a></li>
+            <li><a href="track-order.html">Track Order</a></li>
+            <li><a href="contact.html">Concierge</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Concierge</h4>
+          <p style="font-size: 0.875rem; margin-bottom: 8px;">14-Gulberg Main Boulevard, Lahore</p>
+          <p style="font-size: 0.875rem; margin-bottom: 8px;">Direct: +92 300 1234567</p>
+          <p style="font-size: 0.875rem;">Timings: 10:00 AM - 11:30 PM</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Concierge Support</h4>
+          <p style="font-size: 0.875rem; color: var(--gold-300);">Questions regarding your live order? Call our hotline for instant rider coordination.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 1984 - 2026 Sweet Salim Confectionery &amp; Restaurant. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer-header">
+      <h3>Your Royal Cart</h3>
+      <button class="cart-drawer-close" id="closeCartBtn">&times;</button>
+    </div>
+    <div class="free-delivery-tracker" id="cartFreeDeliveryTracker"></div>
+    <div class="cart-items-list" id="cartDrawerItems"></div>
+    <div class="cart-drawer-footer" id="cartDrawerFooter"></div>
+  </aside>
+
+  <!-- Supabase CDN Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="js/config.js" defer></script>
+  <script src="js/products.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/order-tracking.js" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>

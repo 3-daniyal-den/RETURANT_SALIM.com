@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="goldMark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7E08A" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#AA771C" />
+    </linearGradient>
+    <linearGradient id="burgundyMark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#58111A" />
+      <stop offset="100%" stop-color="#220206" />
+    </linearGradient>
+  </defs>
+
+  <rect width="64" height="64" rx="14" fill="url(#burgundyMark)"/>
+  <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="url(#goldMark)" stroke-width="1.5"/>
+  <rect x="6" y="6" width="52" height="52" rx="8" fill="none" stroke="url(#goldMark)" stroke-dasharray="2 2" stroke-width="0.8"/>
+  
+  <!-- Crown / Sweets Symbol -->
+  <path d="M 18 42 L 20 26 L 27 34 L 32 20 L 37 34 L 44 26 L 46 42 Z" fill="url(#goldMark)"/>
+  <circle cx="32" cy="17" r="2.2" fill="#FDF3B0" />
+  <circle cx="19" cy="23" r="1.8" fill="#FDF3B0" />
+  <circle cx="45" cy="23" r="1.8" fill="#FDF3B0" />
+  
+  <polygon points="32,45 35,49 32,53 29,49" fill="url(#goldMark)" />
+</svg>
